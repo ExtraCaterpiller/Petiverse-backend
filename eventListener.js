@@ -48,8 +48,8 @@ contract.on("NFTMinted", async (owner, tokenId, name, petType, imageUri, event) 
         intelligence: 1,
         lastFeed: new Date(),
         lastExercise: new Date(),
-        hydration: 30,
-        happiness: 30,
+        hydration: 40,
+        happiness: 40,
         health: 50,
         lastWordleTry: new Date(),
         chances: 3
