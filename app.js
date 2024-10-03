@@ -11,9 +11,8 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 
 // Allow requests from the frontend
 app.use(cors({
-    origin: process.env.ALLOWED_ORIGIN,
-    methods: 'GET,POST,PUT',
-    credentials: true
+    origin: "*",
+    methods: 'GET,POST,PUT'
 }));
 app.use(express.json())
 
