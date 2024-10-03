@@ -186,7 +186,10 @@ async function verifyAndGenerateProof(userAddress, tokenId, PRIVATE_KEY, next) {
     const nft = await NFTModel.findOne({ tokenId })
     const taskCompleted = await checkData(nft)
     if (taskCompleted) {
-        const provider = new ethers.JsonRpcProvider(process.env.RPC_URL)
+        const provider = new ethers.JsonRpcProvider(process.env.RPC_URL, {
+            name: "klaytn-baobab",
+            chainId: 1001
+        })
         const wallet = new ethers.Wallet(PRIVATE_KEY, provider)
 
         const contractAddress = process.env.CONTRACT_ADDRESS;

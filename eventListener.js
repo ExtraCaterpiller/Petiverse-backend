@@ -3,7 +3,10 @@ const { ethers } = require("ethers");
 const abi = require("./abi/PetNftAbi.json")
 const NFTModel = require('./models/nftModel')
 
-const provider = new ethers.JsonRpcProvider(process.env.RPC_URL);
+const provider = new ethers.JsonRpcProvider(process.env.RPC_URL, {
+    name: "klayton-baobab",
+    chainId: 1001
+});
 const contractAddress = process.env.CONTRACT_ADDRESS;
 
 const contract = new ethers.Contract(contractAddress, abi, provider);
