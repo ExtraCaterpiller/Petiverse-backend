@@ -49,12 +49,12 @@ contract.on("NFTMinted", async (owner, tokenId, name, petType, imageUri, event) 
         agility: 1,
         strength: 1,
         intelligence: 1,
-        lastFeed: new Date(),
-        lastExercise: new Date(),
+        lastFeed: new Date() - 1000 * 60 * 60 * 1,
+        lastExercise: new Date() - 1000 * 60 * 60 * 12,
         hydration: 40,
         happiness: 40,
         health: 50,
-        lastWordleTry: new Date(),
+        lastWordleTry: new Date() - 1000 * 60 * 15,
         chances: 3
     })
 });
